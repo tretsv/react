@@ -1,4 +1,4 @@
-export const moviesData = [
+export default [
 	{
 		vote_count: 4592,
 		id: 299536,
@@ -13,7 +13,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
-		release_date: "2018-04-25"
+		release_date: "2018-04-25",
 	},
 	{
 		vote_count: 1410,
@@ -29,7 +29,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Prima ballerina, Dominika Egorova faces a bleak and uncertain future after she suffers an injury that ends her career. She soon turns to Sparrow School, a secret intelligence service that trains exceptional young people to use their minds and bodies as weapons. Dominika emerges as the most dangerous Sparrow after completing the sadistic training process. As she comes to terms with her new abilities, she meets a CIA agent who tries to convince her that he is the only person she can trust.",
-		release_date: "2018-03-01"
+		release_date: "2018-03-01",
 	},
 	{
 		vote_count: 29,
@@ -45,7 +45,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"After their reclusive grandmother passes away, the Graham family tries to escape the dark fate they've inherited.",
-		release_date: "2018-06-04"
+		release_date: "2018-06-04",
 	},
 	{
 		vote_count: 4,
@@ -61,7 +61,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
-		release_date: "2018-06-14"
+		release_date: "2018-06-14",
 	},
 	{
 		vote_count: 42,
@@ -77,7 +77,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"In the dark heart of a sprawling, anonymous city, two assassins carry out a sinister mission, a teacher battles a fatal illness, and an enigmatic janitor and a curious waitress lead dangerous double lives. Murderous consequences unravel in the dead of night, as their lives intertwine at the hands of a mysterious criminal mastermind who is hell-bent on revenge.",
-		release_date: "2018-05-11"
+		release_date: "2018-05-11",
 	},
 	{
 		vote_count: 173,
@@ -93,7 +93,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Set in a near-future world where there is no privacy, ignorance or anonymity, our private memories are recorded and crime almost ceases to exist. In trying to solve a series of unsolved murders, Sal Frieland stumbles onto a young woman who appears to have subverted the system and disappeared. She has no identity, no history and no record. Sal realizes it may not be the end of crime but the beginning. Known only as 'The Girl', Sal must find her before he becomes the next victim.",
-		release_date: "2018-05-03"
+		release_date: "2018-05-03",
 	},
 	{
 		vote_count: 41,
@@ -109,7 +109,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"A spoiled, wealthy yacht owner is thrown overboard and becomes the target of revenge from his mistreated employee. A remake of the 1987 comedy.",
-		release_date: "2018-05-03"
+		release_date: "2018-05-03",
 	},
 	{
 		vote_count: 21,
@@ -125,7 +125,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"A young boy searches a future world wasteland for a rumored cure for his dying mother.",
-		release_date: "2018-05-25"
+		release_date: "2018-05-25",
 	},
 	{
 		vote_count: 467,
@@ -141,7 +141,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"In the future, an outbreak of canine flu leads the mayor of a Japanese city to banish all dogs to an island that's a garbage dump. The outcasts must soon embark on an epic journey when a 12-year-old boy arrives on the island to find his beloved pet.",
-		release_date: "2018-03-23"
+		release_date: "2018-03-23",
 	},
 	{
 		vote_count: 43,
@@ -157,7 +157,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"A couple of British 1970s teenaged boys, Enn and Vic, go to a party to meet girls, only to find that the girls are very different from the boys' expectations.",
-		release_date: "2018-05-05"
+		release_date: "2018-05-05",
 	},
 	{
 		vote_count: 25,
@@ -173,7 +173,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"The love affair between poet Percy Shelley and Mary Wollstonecraft Godwin resulted in the creation of an immortal novel, “Frankenstein; or, The Modern Prometheus.”",
-		release_date: "2018-04-22"
+		release_date: "2018-04-22",
 	},
 	{
 		vote_count: 148,
@@ -189,7 +189,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"When three parents discover their daughters’ pact to lose their virginity at prom, they launch a covert one-night operation to stop the teens from sealing the deal.",
-		release_date: "2018-03-30"
+		release_date: "2018-03-30",
 	},
 	{
 		vote_count: 118,
@@ -205,7 +205,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"A journalist strikes up a romantic relationship with notorious drug lord Pablo Escobar.",
-		release_date: "2018-03-09"
+		release_date: "2018-03-09",
 	},
 	{
 		vote_count: 54,
@@ -221,7 +221,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"A head injury causes a woman to develop an extraordinary amount of confidence and believe she's drop dead gorgeous.",
-		release_date: "2018-04-20"
+		release_date: "2018-04-20",
 	},
 	{
 		vote_count: 822,
@@ -237,7 +237,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"'The Invisible Guest' turns on a young businessman who wakes up in a hotel room locked from the inside with the dead body of his lover next to him. He hires a prestigious lawyer, and over one night they work together to clarify what happened in a frenetic race against time.",
-		release_date: "2016-09-22"
+		release_date: "2016-09-22",
 	},
 	{
 		vote_count: 0,
@@ -253,7 +253,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"After the father’s death, the daughter of one of the forefathers of modern Russian democracy, Ksenia Sobchak, tries to understand the 18 years of his political fate. Together with the director Vera Krichevskaya she gives the word to Anatoli Sobchak’s colleagues and opponents, gets acquainted with the criminal case which annulled his career, and tries to find an answer to the question what Anatoly Sobchak’s fate would be in today’s Russia.",
-		release_date: "2018-06-12"
+		release_date: "2018-06-12",
 	},
 	{
 		vote_count: 15,
@@ -269,7 +269,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Max, a macho, solitary Rottweiler police dog is ordered to go undercover as a primped show dog in a prestigious Dog Show, along with his human partner, to avert a disaster from happening.",
-		release_date: "2018-05-10"
+		release_date: "2018-05-10",
 	},
 	{
 		vote_count: 0,
@@ -285,7 +285,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Vasily Pronchishchev and Vasily Chelyuskin were young lieutenants of the Russia fleet, who set out from Yakutsk along the Lena River to the Arctic Ocean on a sailing ship under the leadership of the commander Vitus Bering in the summer of 1735. Contrary to the imperial prohibition, incredible trials and deadly danger lying ahead of all the members of this expedition, a young girl enamored with one of the characters got onto this ship. However, neither storms or severe northern frosts and hunger were able to stop them, since fulfilling of their duty, reaching of the most northeastern point of Eurasia and putting of the vast Arctic territories on the world maps were their main purpose in life.",
-		release_date: "2018-06-07"
+		release_date: "2018-06-07",
 	},
 	{
 		vote_count: 2,
@@ -301,7 +301,7 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Leningrad, one summer in the early eighties. Smuggling LP’s by Lou Reed and David Bowie, the underground rock scene is boiling ahead of the Perestroika. Mike and his beautiful wife Natasha meet with young Viktor Tsoï. Together with friends, they will change the destiny of rock’n’roll in the Soviet Union.",
-		release_date: "2018-06-07"
+		release_date: "2018-06-07",
 	},
 	{
 		vote_count: 5,
@@ -317,8 +317,6 @@ export const moviesData = [
 		adult: false,
 		overview:
 			"Based on the true story, international historical project “Sobibor” is dedicated to the heroism of the Soviet o cer Alexander Pechersky. During the great Patriotic war, being in a Nazi concentration camp Sobibor he managed to do the impossible — for only three weeks to organize a revolt and mass escape of the prisoners. Part of the escapees were caught and shot, and the rest led by Pechersky managed to escape and joined the partisans.",
-		release_date: "2018-05-03"
-	}
+		release_date: "2018-05-03",
+	},
 ];
-
- export default moviesData;

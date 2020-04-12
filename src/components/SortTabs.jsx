@@ -8,11 +8,12 @@ class SortTabs extends React.Component {
 	render() {
 		console.log("SortTabs render");
 
-		const {sortBy, updateSortBy} = this.props;
+		const {sortBy, updateSortBy, updatePage} = this.props;
 
 		const handleClick = value => event => {
 			event.preventDefault();
 			updateSortBy(value);
+			updatePage(1);
 		}
 
 		const getTabClass = value => `nav-link${sortBy === value ? " active" : ""}`;

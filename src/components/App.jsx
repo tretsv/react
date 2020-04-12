@@ -1,15 +1,16 @@
 import React from "react";
 import MovieItem from "./MovieItem";
 import SortTabs from "./SortTabs";
+import Pagination from "./Pagination";
 
 class App extends React.Component {
 	constructor() {
 		super();
-
 		this.state = {
 			movies: [],
 			moviesWillWatch: [],
 			sortBy: "revenue.desc",
+			page: 1,
 		};
 	}
 
@@ -38,14 +39,18 @@ class App extends React.Component {
 		});
 	};
 
-	updateSortBy = value => {
-		this.setState({sortBy: value})
+	updateSortBy = (sortBy) => {
+		this.setState({sortBy: sortBy})
+	}
+
+	updatePage = (page) => {
+		this.setState({page: page})
 	}
 
 	getMovies = () => {
-		console.log("App getMovies");
+		console.log("App getMovies", this.state);
 		fetch(
-			`${process.env.REACT_APP_API_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY3}&sort_by=${this.state.sortBy}`,
+			`${process.env.REACT_APP_API_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY3}&sort_by=${this.state.sortBy}&page=${this.state.page}`,
 		)
 			.then(response => response.json())
 			.then(data => this.setState({ movies: data.results }));
@@ -58,9 +63,7 @@ class App extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		console.log("App didUpdate");
-		// console.log("prev", prevProps, prevState);
-		// console.log("this", this.props, this.state);
-		if(this.state.sortBy !== prevState.sortBy) {
+		if(this.state.sortBy !== prevState.sortBy || this.state.page !== prevState.page) {
 			this.getMovies();
 		}
 	}
@@ -74,7 +77,12 @@ class App extends React.Component {
 					<div className="col-9">
 						<div className="row mb-4">
 							<div className="col-12">
-								<SortTabs sortBy={this.state.sortBy} updateSortBy={this.updateSortBy} />
+								<SortTabs sortBy={this.state.sortBy} updateSortBy={this.updateSortBy} updatePage={this.updatePage} />
+							</div>
+						</div>
+						<div className="row mb-4">
+							<div className="col-12">
+								<Pagination page={this.state.page} updatePage={this.updatePage} />
 							</div>
 						</div>
 						<div className="row">
@@ -88,6 +96,11 @@ class App extends React.Component {
 									/>
 								</div>
 							))}
+						</div>
+						<div className="row mb-4">
+							<div className="col-12">
+								<Pagination page={this.state.page} updatePage={this.updatePage} />
+							</div>
 						</div>
 					</div>
 					<div className="col-3">

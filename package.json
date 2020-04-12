@@ -16,7 +16,9 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -38,6 +40,8 @@
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-react": "^6.24.1",
 		"eslint-plugin-import": "^2.20.2",
-		"eslint-plugin-react": "^7.19.0"
-	}
+		"eslint-plugin-react": "^7.19.0",
+		"gh-pages": "^2.2.0"
+	},
+	"homepage": "tretsv.github.io/react"
 }

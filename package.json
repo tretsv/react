@@ -43,5 +43,5 @@
 		"eslint-plugin-react": "^7.19.0",
 		"gh-pages": "^2.2.0"
 	},
-	"homepage": "tretsv.github.io/react"
+	"homepage": "http://tretsv.github.io/react"
 }

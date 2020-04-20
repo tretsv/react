@@ -4,12 +4,12 @@ class MovieItem extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			willWatch: false,
+			favorite: false,
 		};
 	}
 
 	render() {
-		const { movie, removeMovie, addMovieToWillWatch, removeMovieFromWillWatch } = this.props;
+		const { movie, removeMovie, addMovieToFavorites, removeMovieFromFavorites } = this.props;
 		return (
 			<div key={movie.id} className="card">
 				<img
@@ -21,15 +21,15 @@ class MovieItem extends React.Component {
 					<h6 className="card-title">{movie.title}</h6>
 					<div className="d-flex justify-content-between align-items-center">
 						<p className="mb-0">Rating: {movie.vote_average}</p>
-						{this.state.willWatch ? (
+						{this.state.favorite ? (
 							<button
 								type="button"
 								className="btn btn-success"
 								onClick={() => {
 									this.setState({
-										willWatch: false,
+										favorite: false,
 									});
-									removeMovieFromWillWatch(movie.id);
+									removeMovieFromFavorites(movie.id);
 								}}
 							>
 								Remove Will Watch
@@ -40,9 +40,9 @@ class MovieItem extends React.Component {
 								className="btn btn-secondary"
 								onClick={() => {
 									this.setState({
-										willWatch: true,
+										favorite: true,
 									});
-									addMovieToWillWatch(movie);
+									addMovieToFavorites(movie);
 								}}
 							>
 								Add Will Watch
@@ -51,7 +51,7 @@ class MovieItem extends React.Component {
 						<button
 							type="button"
 							onClick={() => {
-								removeMovieFromWillWatch(movie.id);
+								removeMovieFromFavorites(movie.id);
 								removeMovie(movie.id);
 							}}
 						>

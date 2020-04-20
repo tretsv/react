@@ -8,7 +8,7 @@ class App extends React.Component {
 		super();
 		this.state = {
 			movies: [],
-			moviesWillWatch: [],
+			favorites: [],
 			sortBy: "revenue.desc",
 			page: 1,
 		};
@@ -24,18 +24,18 @@ class App extends React.Component {
 		});
 	};
 
-	addMovieToWillWatch = movie => {
-		const willWatchList = [...this.state.moviesWillWatch];
-		willWatchList.push(movie);
-		this.setState({ moviesWillWatch: willWatchList });
+	addMovieToFavorites = movie => {
+		const favoritesList = [...this.state.favorites];
+		favoritesList.push(movie);
+		this.setState({ favorites: favoritesList });
 	};
 
-	removeMovieFromWillWatch = id => {
-		const updatedMoviesWillWatch = this.state.moviesWillWatch.filter(movie => {
+	removeMovieFromFavorites = id => {
+		const updatedFavorites = this.state.favorites.filter(movie => {
 			return movie.id !== id;
 		});
 		this.setState({
-			moviesWillWatch: updatedMoviesWillWatch,
+			favorites: updatedFavorites,
 		});
 	};
 
@@ -70,7 +70,7 @@ class App extends React.Component {
 
 	render() {
 		console.log("App render");
-		const { movies, moviesWillWatch } = this.state;
+		const { movies, favorites } = this.state;
 		return (
 			<div className="container">
 				<div className="row">
@@ -91,8 +91,8 @@ class App extends React.Component {
 									<MovieItem
 										movie={movie}
 										removeMovie={this.removeMovie}
-										addMovieToWillWatch={this.addMovieToWillWatch}
-										removeMovieFromWillWatch={this.removeMovieFromWillWatch}
+										addMovieToFavorites={this.addMovieToFavorites}
+										removeMovieFromFavorites={this.removeMovieFromFavorites}
 									/>
 								</div>
 							))}
@@ -104,7 +104,7 @@ class App extends React.Component {
 						</div>
 					</div>
 					<div className="col-3">
-						<p>Will Watch: {moviesWillWatch.length}</p>
+						<p>Favorites: {favorites.length}</p>
 					</div>
 				</div>
 			</div>

@@ -32,7 +32,7 @@ class MovieItem extends React.Component {
 									removeMovieFromFavorites(movie.id);
 								}}
 							>
-								Remove Will Watch
+								Unlike
 							</button>
 						) : (
 							<button
@@ -45,7 +45,7 @@ class MovieItem extends React.Component {
 									addMovieToFavorites(movie);
 								}}
 							>
-								Add Will Watch
+								Like
 							</button>
 						)}
 						<button

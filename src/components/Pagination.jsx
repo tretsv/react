@@ -1,54 +1,48 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from "../context"
 
-class Pagination extends React.Component {
-	shouldComponentUpdate(nextProps, nextState, nextContext) {
-		return nextProps.page !== this.props.page;
-	}
+function Pagination({ page }) {
+	const { setPage } = useContext(Context);
 
-	render() {
-		console.log("Pagination render");
-
-		const {page, updatePage} = this.props;
-
-		return (
-			<nav aria-label="Page navigation example">
-				<ul className="pagination">
-					<li className="page-item">
-						<a
-							href="#"
-							className="page-link"
-							onClick={(event) => {
-								event.preventDefault();
-								updatePage(page > 1 ? page - 1 : 1)
-							}}
-						>
-							Previous
-						</a>
-					</li>
-					<li className="page-item">
-						<a
-							href="#"
-							className="page-link"
-						>
-							{page}
-						</a>
-					</li>
-					<li className="page-item">
-						<a
-							href="#"
-							className="page-link"
-							onClick={(event) => {
-								event.preventDefault();
-								updatePage(page + 1)
-							}}
-						>
-							Next
-						</a>
-					</li>
-				</ul>
-			</nav>
-		);
-	}
+	console.log("Pagination render");
+	return (
+		<nav aria-label="Page navigation example">
+			<ul className="pagination">
+				<li className="page-item">
+					<a
+						href="#"
+						className="page-link"
+						onClick={(event) => {
+							event.preventDefault();
+							setPage(page > 1 ? page - 1 : 1)
+						}}
+					>
+						Previous
+					</a>
+				</li>
+				<li className="page-item">
+					<a
+						href="#"
+						className="page-link"
+					>
+						{page}
+					</a>
+				</li>
+				<li className="page-item">
+					<a
+						href="#"
+						className="page-link"
+						onClick={(event) => {
+							event.preventDefault();
+							setPage(page + 1)
+						}}
+					>
+						Next
+					</a>
+				</li>
+			</ul>
+		</nav>
+	);
 }
 
 export default Pagination;

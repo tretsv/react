@@ -1,105 +1,68 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import MovieItem from "./MovieItem";
 import SortTabs from "./SortTabs";
 import Pagination from "./Pagination";
+import { Context } from "../context"
 
-class App extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			movies: [],
-			favorites: [],
-			sortBy: "revenue.desc",
-			page: 1,
-		};
-	}
+function App() {
+	const [movies, setMovies] = useState([]);
+	const [favorites, setFavorites] = useState([]);
+	const [sortBy, setSortBy] = useState("popularity.desc");
+	const [page, setPage] = useState(1);
 
-	removeMovie = id => {
-		const { movies } = this.state;
-		const updatedMovies = movies.filter(movie => {
-			return movie.id !== id;
-		});
-		this.setState({
-			movies: updatedMovies,
-		});
+	const removeMovie = id => {
+		console.log("removeMovie before", movies.length);
+		setMovies(movies.filter(movie => {return movie.id !== id;}));
 	};
 
-	addMovieToFavorites = movie => {
-		const favoritesList = [...this.state.favorites];
-		favoritesList.push(movie);
-		this.setState({ favorites: favoritesList });
+	const addMovieToFavorites = movie => {
+		console.log("addMovieToFavorites", favorites.length);
+		favorites.push(movie);
+		setFavorites(favorites);
 	};
 
-	removeMovieFromFavorites = id => {
-		const updatedFavorites = this.state.favorites.filter(movie => {
-			return movie.id !== id;
-		});
-		this.setState({
-			favorites: updatedFavorites,
-		});
+	const removeMovieFromFavorites = id => {
+		console.log("removeMovieFromFavorites", favorites.length);
+		setFavorites(favorites.filter(movie => {return movie.id !== id;}));
 	};
 
-	updateSortBy = (sortBy) => {
-		this.setState({sortBy: sortBy})
-	}
-
-	updatePage = (page) => {
-		this.setState({page: page})
-	}
-
-	getMovies = () => {
-		console.log("App getMovies", this.state);
+	useEffect(() => {
+		console.log("before fetch");
 		fetch(
-			`${process.env.REACT_APP_API_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY3}&sort_by=${this.state.sortBy}&page=${this.state.page}`,
+			`${process.env.REACT_APP_API_URL}/discover/movie?api_key=${process.env.REACT_APP_API_KEY3}&sort_by=${sortBy}&page=${page}`,
 		)
 			.then(response => response.json())
-			.then(data => this.setState({ movies: data.results }));
-	}
+			.then(data => setMovies(data.results));
+	}, [sortBy, page]);
 
-	componentDidMount() {
-		console.log("App didMount");
-		this.getMovies();
-	}
+	useContext(Context);
 
-	componentDidUpdate(prevProps, prevState) {
-		console.log("App didUpdate");
-		if(this.state.sortBy !== prevState.sortBy || this.state.page !== prevState.page) {
-			this.getMovies();
-		}
-	}
-
-	render() {
-		console.log("App render");
-		const { movies, favorites } = this.state;
-		return (
+	console.log("App render");
+	return (
+		<Context.Provider value={{setSortBy, setPage, removeMovie, addMovieToFavorites, removeMovieFromFavorites}}>
 			<div className="container">
 				<div className="row">
 					<div className="col-9">
 						<div className="row mb-4">
 							<div className="col-12">
-								<SortTabs sortBy={this.state.sortBy} updateSortBy={this.updateSortBy} updatePage={this.updatePage} />
+								<SortTabs sortBy={sortBy} />
 							</div>
 						</div>
 						<div className="row mb-4">
 							<div className="col-12">
-								<Pagination page={this.state.page} updatePage={this.updatePage} />
+								<Pagination page={page} />
 							</div>
 						</div>
 						<div className="row">
 							{movies.map(movie => (
 								<div className="col-6 mb-4" key={movie.id}>
-									<MovieItem
-										movie={movie}
-										removeMovie={this.removeMovie}
-										addMovieToFavorites={this.addMovieToFavorites}
-										removeMovieFromFavorites={this.removeMovieFromFavorites}
-									/>
+									<MovieItem movie={movie} />
 								</div>
 							))}
 						</div>
 						<div className="row mb-4">
 							<div className="col-12">
-								<Pagination page={this.state.page} updatePage={this.updatePage} />
+								<Pagination page={page} />
 							</div>
 						</div>
 					</div>
@@ -108,8 +71,8 @@ class App extends React.Component {
 					</div>
 				</div>
 			</div>
-		);
-	}
+		</Context.Provider>
+	);
 }
 
 export default App;
